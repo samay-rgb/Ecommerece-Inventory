@@ -1,10 +1,24 @@
 import React from "react";
-import img1 from "./img1.jpg";
 export default function Items(props) {
+  /*const [counter, setCount] = useState(0);
+  const handleDec = () => {
+    if (counter) setCount(counter - 1);
+  };
+  const handleInc = () => {
+    setCount(counter + 1);
+  };
+  const changeOne = () => {
+    setCount(1);
+  };*/
   return (
     <div className="col-md-3 my-3">
       <div className="card" style={{ width: "18rem" }}>
-        <img src={img1} className="card-img-top" alt="..." />
+        <img
+          src={props.image}
+          className="card-img-top"
+          alt="..."
+          style={{ height: "18rem" }}
+        />
         <div className="card-body">
           <h5 className="card-title">HP Pavillion Laptop</h5>
           <p className="card-text">
@@ -13,9 +27,9 @@ export default function Items(props) {
             Office/Natural Silver/1.76 Kg), 15s-du3038TU
           </p>
           <h3 className="price">Price = ${props.price}</h3>
-          <a href="/" className="btn btn-primary">
+          <button href="/" className="btn btn-primary">
             Add to Cart
-          </a>
+          </button>
         </div>
       </div>
     </div>

@@ -28,3 +28,38 @@
   color: #61dafb;
 }
 
+.card-item-container {
+  display: flex;
+  flex-direction: row;
+  padding: 1em 0.2em;
+  width: 100%;
+  margin: 1em 3vw;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+.cartimg {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+.pdescription {
+  display: flex;
+  flex-direction: row;
+  width: 85vw;
+  align-items: center;
+  padding: 1em;
+}
+.desc-list {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.desc-list li {
+  margin: 0 1em;
+}
+.remove-button {
+  height: 45px;
+}
