@@ -11,6 +11,9 @@ import SignUpIn from "./components/Signup";
 import Cart from "./components/Cart";
 import Seller from "./components/Seller";
 import Smartphone from "./components/Smartphone";
+import Checkout from "./components/Checkout";
+import Admin from "./components/admin";
+import Laptops from "./components/Laptops";
 function App() {
   /*const [mode, setMode] = useState("light");
   const toggle = () => {
@@ -44,6 +47,15 @@ function App() {
           </Route>
           <Route exact path="/smartphone">
             <Smartphone />
+          </Route>
+          <Route exact path="/checkout">
+            <Checkout />
+          </Route>
+          <Route exact path="/admin">
+            <Admin />
+          </Route>
+          <Route exact path="/laptops">
+            <Laptops />
           </Route>
         </Switch>
       </Router>

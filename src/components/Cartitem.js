@@ -19,7 +19,7 @@ export default function Cartitem({ item, onRemove }) {
 
   return (
     <>
-      {counter && (
+      {counter !== 0 && (
         <div className="card-item-container">
           <div className="pimg">
             <img src={item.imgSrc} className="cartimg" alt="product img" />

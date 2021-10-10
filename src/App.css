@@ -63,3 +63,31 @@
 .remove-button {
   height: 45px;
 }
+.seller-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 23vw;
+  height: 35vh;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 1em 0.3em;
+  box-shadow: 10px 5px 5px gray;
+  background: linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));
+}
+.seller-details {
+  list-style-type: none;
+  font-weight: bold;
+}
+.seller-card button {
+  width: 7vw;
+  margin: 0.1em 0;
+  margin-left: 1.8em;
+}
+.seller-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 23vw);
+  grid-gap: 5vw;
+  margin: 2em;
+  justify-content: center;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Cartitem from "./Cartitem";
 import img1 from "./img1.jpg";
+import { Link } from "react-router-dom";
 export default function Cart() {
   const [cartItems, setCartItem] = useState([
     { imgSrc: img1, productName: "Laptop1", qty: 1, productPrice: 1200, id: 1 },
@@ -32,7 +33,7 @@ export default function Cart() {
   console.log(totalCost(cartItems));
   return (
     <>
-      <div className="d-flex flex-row">
+      <div className="container">
         <div
           className="container ml-0"
           style={{ width: "60%", margin: "0", padding: "0" }}
@@ -40,25 +41,17 @@ export default function Cart() {
           {cartItems.map((item) => {
             return <Cartitem item={item} key={item.id} onRemove={onRemove} />;
           })}
-        </div>
-        <div
-          className="p-2 my-8 container"
-          style={{
-            width: "35%",
-            marginLeft: "50px",
-            border: "5px solid",
-            height: "20%",
-            marginTop: "18px",
-            borderRadius: "15px",
-          }}
-        >
-          <h1>Name: Sasuke Uchiha</h1>
-          <h3>
-            Address: Nowhere Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Eum, cum.
-          </h3>
-          <h3>Total Cost: ${totalCost(cartItems)}</h3>
-          <button className="btn btn-success my-3">Procced to buy</button>
+          <Link
+            to="/checkout"
+            className="btn btn-primary text-center "
+            style={{
+              marginLeft: "640px",
+              width: "175px",
+              marginBottom: "10px",
+            }}
+          >
+            Proceed to checkout
+          </Link>
         </div>
       </div>
     </>

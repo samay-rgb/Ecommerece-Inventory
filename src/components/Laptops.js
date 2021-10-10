@@ -4,7 +4,7 @@ import img1 from "./img1.jpg";
 import lap1 from "./lap1.jpeg";
 import lap2 from "./lap3.jpeg";
 import lap3 from "./lap3.jpeg";
-export default function Itemholder() {
+export default function Laptops() {
   const items = [
     {
       id: 1,
@@ -105,6 +105,10 @@ export default function Itemholder() {
   ];
   return (
     <div className="container">
+      <h1 className="text-center">
+        Find best selling laptops according to your budget. Get additional 10%
+        off this festive season.
+      </h1>
       <div className="row">
         {items.map((element) => {
           return (

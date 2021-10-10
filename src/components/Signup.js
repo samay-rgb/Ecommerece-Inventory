@@ -4,7 +4,7 @@ function SignUpIn() {
   const [isRight, setState] = useState(false);
   return (
     <>
-      <h2 className="h2">Welcome To E-Mart</h2>
+      <h2 className="h2">Welcome To Amazkart</h2>
       <div
         className={isRight ? "containerl right-panel-active" : "containerl"}
         id="container "
@@ -43,8 +43,18 @@ function SignUpIn() {
               type="password"
               placeholder="Password"
             />
-
             <button className="bn">Sign In</button>
+
+            <select
+              className="form-select form-select-lg my-3 mb-3"
+              aria-label=".form-select-lg example"
+              style={{ width: "50%", fontSize: "0.85em" }}
+            >
+              <option defaultValue>Login as</option>
+              <option value="1">Customer</option>
+              <option value="2">Seller</option>
+              <option value="3">Admin</option>
+            </select>
           </form>
         </div>
         <div className="overlay-container">

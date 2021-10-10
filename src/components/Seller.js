@@ -29,7 +29,7 @@ export default function Seller() {
   ];
   return (
     <div className="container my-3">
-      <h1>Welcome Uzumaki Naruto! </h1>
+      <h1>Welcome SaiKumar Andure! </h1>
       <h4>Here you can easily manage your products</h4>
       <div className="container my-3">
         <div className="viewproducts">

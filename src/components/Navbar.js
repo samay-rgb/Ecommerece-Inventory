@@ -39,7 +39,7 @@ export default function Navbar(props) {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/laptops">
                   Laptops
                 </Link>
               </li>
@@ -55,7 +55,6 @@ export default function Navbar(props) {
               </li>
             </ul>
             <Link to="/cart" className="link-dark mx-3">
-              Cart
               <img
                 title="Go to Cart"
                 src="https://img.icons8.com/external-flatart-icons-solid-flatarticons/50/000000/external-cart-marketing-flatart-icons-solid-flatarticons.png"
@@ -67,6 +66,9 @@ export default function Navbar(props) {
             </Link>
             <Link to="/sell" className="btn btn-primary mx-2">
               Seller
+            </Link>
+            <Link to="/admin" className="btn btn-primary mx-2">
+              Admin
             </Link>
           </div>
         </div>
