@@ -54,7 +54,7 @@ export default function Admin() {
     );
   };
   return (
-    <>
+    <div>
       <h1>Pending Requests: </h1>
       <div className="seller-cards-container">
         {sellers.map((seller) => {
@@ -63,6 +63,6 @@ export default function Admin() {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }

@@ -3,7 +3,7 @@ import "../Signup.css";
 function SignUpIn() {
   const [isRight, setState] = useState(false);
   return (
-    <>
+    <div>
       <h2 className="h2">Welcome To Amazkart</h2>
       <div
         className={isRight ? "containerl right-panel-active" : "containerl"}
@@ -86,7 +86,7 @@ function SignUpIn() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export default SignUpIn;

@@ -32,7 +32,7 @@ export default function Cart() {
 
   console.log(totalCost(cartItems));
   return (
-    <>
+    <div>
       <div className="container">
         <div
           className="container ml-0"
@@ -54,6 +54,6 @@ export default function Cart() {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }

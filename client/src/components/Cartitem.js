@@ -18,7 +18,7 @@ export default function Cartitem({ item, onRemove }) {
   };
 
   return (
-    <>
+    <div>
       {counter !== 0 && (
         <div className="card-item-container">
           <div className="pimg">
@@ -55,6 +55,6 @@ export default function Cartitem({ item, onRemove }) {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

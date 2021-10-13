@@ -10,6 +10,7 @@ const db = mysql.createConnection({
     password: '',
     database: 'amazkart',
 });
+
 app.post('/addproducts',(req,res) => {
     const pid = req.body.pid;
     const pname = req.body.pname;
@@ -23,10 +24,10 @@ app.post('/addproducts',(req,res) => {
         }
         else
         {
-            req.send("Product added successfuly");
+            res.send("Product added successfuly");
         }
     })
 })
-app.listen(3001,() => {
+app.listen(3306,() => {
     console.log("Server running on port 3001");
 });
