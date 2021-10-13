@@ -1,6 +1,10 @@
-import React from "react";
-
+import React,{useState} from "react";
+import Axios from "axios";
 export default function Seller() {
+  [pid,setPid] = useState(0);
+  [qty,setQty] = useState(0);
+  [pname,setPname] = useState('');
+  [seller,setSeller] = useState('');
   const products = [
     {
       id: "a",
