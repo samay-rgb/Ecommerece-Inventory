@@ -1,11 +1,12 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Axios from "axios";
 export default function Seller() {
-  const [pid,setPid] = useState(0);
-  const [qty,setQty] = useState(0);
-  const [price,setPrice] = useState(0);
-  const[pname,setPname] = useState('');
-  const[seller,setSeller] = useState('');
+  const [quantity, setQuantity] = useState(0);
+  const [price, setPrice] = useState(0);
+  const [pname, setPname] = useState("");
+  const [category, setCategory] = useState("electronics");
+  const [img_url, setUrl] = useState("");
+  const [description, setDescription] = useState("");
   const products = [
     {
       id: "a",
@@ -32,15 +33,20 @@ export default function Seller() {
       quantiy: "50",
     },
   ];
-  const addproduct = () =>{
-    console.log([pid,pname,qty,seller,price]);
-    Axios.post("http://localhost:3001/addproducts",{
-      pid:pid,pname:pname,quantiy:qty,price:price,seller:seller
-    }).then(()=>{
+  const addproduct = () => {
+    console.log([pname,quantity,price,img_url,category,description]);
+    Axios.post("http://localhost:3001/addproducts", {
+      pname: pname,
+      quantity: quantity,
+      price: price,
+      category: category,
+      img_url: img_url,
+      description:description,
+    }).then(() => {
+      alert('Product added successfuly');
       console.log("successfuly added the product");
     });
-
-  }
+  };
   return (
     <div className="container my-3">
       <h1>Welcome SaiKumar Andure! </h1>
@@ -73,36 +79,6 @@ export default function Seller() {
           Add new products or manage existing products
         </h2>
         <form action="" className="my-3">
-        <div className="mb-3">
-        <label htmlFor="title" className="form-label">
-              Name
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="name"
-              name="name"
-              aria-describedby="emailHelp"
-              onChange={(event)=>{
-                setSeller(event.target.value);
-              }}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="title" className="form-label">
-              Product ID
-            </label>
-            <input
-              type="number"
-              className="form-control"
-              id="title"
-              name="title"
-              aria-describedby="emailHelp"
-              onChange={(event)=>{
-                setPid(event.target.value);
-              }}
-            />
-          </div>
           <div className="mb-3">
             <label htmlFor="title" className="form-label">
               Product Name
@@ -113,11 +89,29 @@ export default function Seller() {
               id="title"
               name="title"
               aria-describedby="emailHelp"
-              onChange={(event)=>{
+              onChange={(event) => {
                 setPname(event.target.value);
               }}
             />
           </div>
+          <div className="mb-3">
+            <label htmlFor="title" className="form-label">
+              Product Description
+            </label>
+            <textarea class="form-control" id="description" rows="3" onChange={(event)=>{
+                setDescription(event.target.value);
+            }}></textarea>
+          </div>
+          <div class="mb-3">
+      <label for="Select" class="form-label">Category</label>
+      <select id="Select" class="form-select" onChange={(event)=>{setCategory(event.target.value);}}>
+        <option>Smartphone</option>
+        <option>Laptop</option>
+        <option>Wireless</option>
+        <option>Camera</option>
+        <option>Other</option>
+      </select>
+    </div>
           <div className="mb-3">
             <label htmlFor="title" className="form-label">
               Price
@@ -128,7 +122,7 @@ export default function Seller() {
               id="price"
               name="price"
               aria-describedby="emailHelp"
-              onChange={(event)=>{
+              onChange={(event) => {
                 setPrice(event.target.value);
               }}
             />
@@ -143,12 +137,31 @@ export default function Seller() {
               id="quantity"
               name="quantity"
               aria-describedby="emailHelp"
-              onChange={(event)=>{
-                setQty(event.target.value);
+              onChange={(event) => {
+                setQuantity(event.target.value);
               }}
             />
           </div>
-          <button type="submit" className="btn btn-success" onClick={addproduct}>
+          <div className="mb-3">
+            <label htmlFor="title" className="form-label">
+              Image URL
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="img_url"
+              name="img_url"
+              aria-describedby="emailHelp"
+              onChange={(event) => {
+                setUrl(event.target.value);
+              }}
+            />
+          </div>
+          <button
+            type="submit"
+            className="btn btn-success"
+            onClick={addproduct}
+          >
             Add to Catalogue
           </button>
           <button type="submit" className="btn btn-info mx-3">
