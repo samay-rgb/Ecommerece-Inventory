@@ -23,6 +23,15 @@ router.get("/getlaptops", async (req, res) => {
     }
   });
 });
+router.get("/getSellerItems", async (req, res) => {
+  db.query("SELECT * FROM products WHERE seller_id = 213", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
 router.get("/getphones", async (req, res) => {
   db.query("SELECT * FROM products WHERE category LIKE 'Smartphone'", (err, result) => {
     if (err) {

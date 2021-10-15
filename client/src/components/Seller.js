@@ -4,35 +4,13 @@ export default function Seller() {
   const [quantity, setQuantity] = useState(0);
   const [price, setPrice] = useState(0);
   const [pname, setPname] = useState("");
-  const [category, setCategory] = useState("electronics");
+  const [category, setCategory] = useState("Smartphone");
   const [img_url, setUrl] = useState("");
   const [description, setDescription] = useState("");
-  const products = [
-    {
-      id: "a",
-      name: " Laptop",
-      price: "150",
-      quantiy: "5",
-    },
-    {
-      id: "b",
-      name: " Laptop",
-      price: "1150",
-      quantiy: "5",
-    },
-    {
-      id: "c",
-      name: " Laptop",
-      price: "1520",
-      quantiy: "5",
-    },
-    {
-      id: "d",
-      name: " Laptop",
-      price: "150",
-      quantiy: "50",
-    },
-  ];
+  const [products,setProducts] = useState([]);
+  Axios.get("http://localhost:3001/getSellerItems").then((response)=>{
+      setProducts(response.data);
+  });
   const addproduct = () => {
     console.log([pname,quantity,price,img_url,category,description]);
     Axios.post("http://localhost:3001/addproducts", {
@@ -57,15 +35,15 @@ export default function Seller() {
             {products.map((element) => {
               return (
                 <li
-                  key={element.id}
+                  key={element.pid}
                   className="list-group-item d-flex justify-content-between align-items-start"
                 >
                   <div className="ms-2 me-auto">
-                    <div className="fw-bold">{element.name}</div>
-                    Rate= ${element.price}
+                    <div className="fw-bold">{element.pname}</div>
+                    Rate=  <span>&#x20B9;</span>{element.price}
                   </div>
                   <span className="badge bg-primary rounded-pill">
-                    {element.quantiy}
+                    {element.quantity}
                   </span>
                 </li>
               );
