@@ -3,7 +3,7 @@ import Items from "./Items";
 import Axios from 'axios';
 export default function Laptops() {
   const [laptops,setLaptops] = useState([]);
-  Axios.get("http://localhost:3001/getlaptops").then((response)=>{
+  Axios.get("http://localhost:3001/products/getlaptops").then((response)=>{
       setLaptops(response.data);
   });
   if(laptops.length)

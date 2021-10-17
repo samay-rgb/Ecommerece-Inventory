@@ -8,12 +8,12 @@ export default function Seller() {
   const [img_url, setUrl] = useState("");
   const [description, setDescription] = useState("");
   const [products,setProducts] = useState([]);
-  Axios.get("http://localhost:3001/getSellerItems").then((response)=>{
+  Axios.get("http://localhost:3001/products/getSellerItems").then((response)=>{
       setProducts(response.data);
   });
   const addproduct = () => {
     console.log([pname,quantity,price,img_url,category,description]);
-    Axios.post("http://localhost:3001/addproducts", {
+    Axios.post("http://localhost:3001/products/addproducts", {
       pname: pname,
       quantity: quantity,
       price: price,
@@ -76,13 +76,13 @@ export default function Seller() {
             <label htmlFor="title" className="form-label">
               Product Description
             </label>
-            <textarea class="form-control" id="description" rows="3" onChange={(event)=>{
+            <textarea className="form-control" id="description" rows="3" onChange={(event)=>{
                 setDescription(event.target.value);
             }}></textarea>
           </div>
-          <div class="mb-3">
-      <label for="Select" class="form-label">Category</label>
-      <select id="Select" class="form-select" onChange={(event)=>{setCategory(event.target.value);}}>
+          <div className="mb-3">
+      <label htmlFor="Select" className="form-label">Category</label>
+      <select id="Select" className="form-select" onChange={(event)=>{setCategory(event.target.value);}}>
         <option>Smartphone</option>
         <option>Laptop</option>
         <option>Wireless</option>

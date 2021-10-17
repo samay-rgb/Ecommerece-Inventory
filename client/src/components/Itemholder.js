@@ -7,7 +7,7 @@ import Items from "./Items";
 import Axios from 'axios';
 export default function Itemholder() { 
   const [productList,setProductList] = useState([]);
-  Axios.get("http://localhost:3001/getproducts").then((response)=>{
+  Axios.get("http://localhost:3001/products/getproducts").then((response)=>{
       setProductList(response.data);
   });
   if(productList.length)
