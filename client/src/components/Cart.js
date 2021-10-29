@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import Cartitem from "./Cartitem";
-import img1 from "./img1.jpg";
 import { Link } from "react-router-dom";
 export default function Cart() {
   const [cartItems, setCartItem] = useState([
-    { imgSrc: img1, productName: "Laptop1", qty: 1, productPrice: 1200, id: 1 },
-    { imgSrc: img1, productName: "Laptop2", qty: 1, productPrice: 1550, id: 2 },
-    { imgSrc: img1, productName: "Laptop3", qty: 1, productPrice: 2500, id: 3 },
-    { imgSrc: img1, productName: "Laptop4", qty: 1, productPrice: 500, id: 4 },
-    { imgSrc: img1, productName: "Laptop5", qty: 1, productPrice: 150, id: 5 },
-    { imgSrc: img1, productName: "Laptop6", qty: 1, productPrice: 1599, id: 6 },
+    { imgSrc: "/", productName: "Laptop1", qty: 1, productPrice: 1200, id: 1 },
+    { imgSrc: "/", productName: "Laptop2", qty: 1, productPrice: 1550, id: 2 },
+    { imgSrc: "/", productName: "Laptop3", qty: 1, productPrice: 2500, id: 3 },
+    { imgSrc: "/", productName: "Laptop4", qty: 1, productPrice: 500, id: 4 },
+    { imgSrc: "/", productName: "Laptop5", qty: 1, productPrice: 150, id: 5 },
+    { imgSrc: "/", productName: "Laptop6", qty: 1, productPrice: 1599, id: 6 },
   ]);
   const onRemove = (item) => {
     console.log("I am the remove of ", item);

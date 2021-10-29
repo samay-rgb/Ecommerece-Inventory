@@ -48,11 +48,6 @@ export default function Navbar(props) {
                   Cameras
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  Accessories
-                </Link>
-              </li>
             </ul>
             <Link to="/cart" className="link-dark mx-3">
               <img

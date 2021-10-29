@@ -1,5 +1,5 @@
 import React from "react";
-//import img1 from "./img1.jpg";
+
 export default function Checkout() {
   const items = [
     { productName: "Laptop1", qty: 5, productPrice: 1200, id: 1 },

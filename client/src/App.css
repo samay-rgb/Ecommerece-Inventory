@@ -35,7 +35,7 @@
   width: 100%;
   margin: 1em 3vw;
   border: 1px solid black;
-  border-radius: 20px;
+  border-radius: 8px;
 }
 .cartimg {
   width: 100px;
@@ -92,4 +92,16 @@
   grid-gap: 5vw;
   margin: 2em;
   justify-content: center;
+}
+.small-field
+{
+  width:100px;
+}
+.medium-field
+{
+  width:500px;
+}
+.hide
+{
+  display:none;
 }
